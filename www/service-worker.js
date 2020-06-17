@@ -1,5 +1,26 @@
-self.addEventListener('install', (event) => {
+/* self.addEventListener('install', (event) => {
   // console.log('👷', 'install', event);
+  self.skipWaiting();
+}); */
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open('v1').then((cache) => {
+      return cache.addAll([
+        './img/',
+        './img/open.png',
+        './img/opening.png',
+        './img/closed.png',
+        './img/closing.png',
+        './img/closed_192.png',
+        './img/closed_512.png',
+        './css/',
+        './css/jquery.mobile-1.2.1.min.css',
+        './css/images/',
+        './css/images/ajax-loader.gif'
+      ]);
+    })
+  );
   self.skipWaiting();
 });
 
@@ -9,6 +30,17 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', function(event) {
-  // console.log('👷', 'fetch', event);
-  event.respondWith(fetch(event.request));
+  //console.log('👷', 'fetch', event);
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      if (!response) {
+        event.request.credentials = 'same-origin';
+        return fetch(event.request);
+      }else{
+        return response
+      }
+
+    })
+  );
+  //event.respondWith(fetch(event.request));
 });
