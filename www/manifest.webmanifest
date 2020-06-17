@@ -5,7 +5,17 @@
     {
       "src": "/img/closed.png",
       "type": "image/png",
-      "sizes": "72x72"
+      "sizes": "76x76"
+    },
+    {
+      "src": "/img/closed_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/closed_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",
