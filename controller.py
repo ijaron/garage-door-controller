@@ -387,15 +387,15 @@ class APIHandler(Resource):
                 if d.id == doorId or doorId == "all_doors":
                     state = d.get_state()
                     if command == "toggle":
-                        self.controller.toggle(doorId)
+                        self.controller.toggle(d.id)
                         return 'OK'
                     elif command == "open":
                         if state == "closed":
-                            self.controller.toggle(doorId)
+                            self.controller.toggle(d.id)
                         return 'OK'
                     elif command == "close":
                         if state == "open":
-                            self.controller.toggle(doorId)
+                            self.controller.toggle(d.id)
                         return 'OK'
                     else:
                         request.setResponseCode(400)
