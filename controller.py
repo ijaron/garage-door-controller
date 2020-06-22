@@ -382,24 +382,26 @@ class APIHandler(Resource):
         key = request.args['key'][0]
         command = request.args['command'][0]
         doorId = request.args['id'][0]
+        r = ""
         if key == self.controller.config['config']['api_key']:
             for d in self.doors:
                 if d.id == doorId or doorId == "all_doors":
                     state = d.get_state()
                     if command == "toggle":
                         self.controller.toggle(d.id)
-                        return 'OK'
+                        r = 'OK'
                     elif command == "open":
                         if state == "closed":
                             self.controller.toggle(d.id)
-                        return 'OK'
+                        r = 'OK'
                     elif command == "close":
                         if state == "open":
                             self.controller.toggle(d.id)
-                        return 'OK'
+                        r = 'OK'
                     else:
                         request.setResponseCode(400)
-                        return 'Error: Command not implemented'
+                        r = 'Error: Command not implemented'
+            return r
         else:
             request.setResponseCode(403)
             return 'Error: API error'
