@@ -160,3 +160,7 @@ function init() {
 }
 
 $(document).live('pageinit', init);
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js');
+}
