@@ -34,16 +34,9 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(response => {
       if (!response) {
-//        event.request.credentials = 'include';
-//        event.request.mode = "no-cors";
-//        console.log('👷', 'fetch', event);
-//        event.request.Headers.Add("Authorization", "Basic " + Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes("user" + ":" + "12345")));
         return fetch(event.request, {
           credentials: "include",
-          mode: "same-origin",
-/*          headers:[
-            "Authorization", "Basic " + ToBase64String(ASCIIEncoding.ASCII.GetBytes("user" + ":" + "12345"))
-          ] */
+          mode: "same-origin"
         });
       }else{
         return response
