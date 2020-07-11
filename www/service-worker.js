@@ -16,8 +16,17 @@ self.addEventListener('install', (event) => {
         './img/closed_512.png',
         './css/',
         './css/jquery.mobile-1.2.1.min.css',
+        './css/jquery.mobile.simpledialog.css',
         './css/images/',
-        './css/images/ajax-loader.gif'
+        './css/images/ajax-loader.gif',
+        './index.html',
+        './js/',
+        './js/client.js',
+        './js/date.format.js',
+        './js/jquery-1.8.3.min.js',
+        './js/jquery.mobile-1.2.1.min.js',
+        './js/jquery.mobile.simpledialog2.js',
+        './js/js.cookie.js'
       ]);
     })
   );
