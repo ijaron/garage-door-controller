@@ -18,6 +18,7 @@ Mobile App:
 -----------
 
 * Native iOS mobile app is available on the [iTunes App Store](https://itunes.apple.com/app/id1418995156)
+* This branch makes the webapp capable of being installed on android as a webapk or as a chrome app on other devices, when served over https. At this time the feature should be considered as beta but has been working fine in my tests. There are a few major underhood changes to make it work, mostly in implementing a serviceWorker and handling authentication with the serviceWorker.
 
 Requirements:
 -----
