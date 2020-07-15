@@ -20,6 +20,14 @@ Mobile App:
 * Native iOS mobile app is available on the [iTunes App Store](https://itunes.apple.com/app/id1418995156)
 * This branch makes the webapp capable of being installed on android as a webapk or as a chrome app on other devices, when served over https. At this time the feature should be considered as beta but has been working fine in my tests. There are a few major underhood changes to make it work, mostly in implementing a serviceWorker and handling authentication with the serviceWorker.
 
+Here is what the app will look like in your app drawer.
+![Screenshot (Jul 15, 2020 5 40 49 PM)](https://user-images.githubusercontent.com/5156472/87607406-e4a20580-c6c2-11ea-882f-f3a0b8678803.jpg)
+
+To install on android select "add to home screen" from the menu
+<img src="https://user-images.githubusercontent.com/5156472/87608078-9d1c7900-c6c4-11ea-9f00-6b499e78b6c1.jpg" alt="InkedScreenshot_20200715-174810_LI" width="200"/>
+Then add
+<img src="https://user-images.githubusercontent.com/5156472/87608115-aefe1c00-c6c4-11ea-8716-8a7a35ba3400.jpg" alt="Screenshot_20200715-174818" width="300"/>
+
 Requirements:
 -----
 
