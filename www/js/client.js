@@ -18,7 +18,6 @@ function click(name)
         }
       },
       error: function (xhr, status, errorThrown) {
-          //Here the status code can be retrieved like;
           xhr.status;
           if (xhr.status == 401) {
             $(document).simpledialog2({
@@ -34,11 +33,9 @@ function click(name)
                     "<label for='pass'>Password:</label><br>"+
                     "<input type='password' id='pass' name='pass'>"+
                   "</form>" +
-                  // NOTE: the use of rel="close" causes this button to close the dialog.
                   "<a rel='close' data-role='button' href='#' onclick='loginpromt(\x22click\x22,\x22"+name+"\x22)'>OK</a>"
                 });
           }
-          //The message added to Response object in Controller can be retrieved as following.
           xhr.responseText;
       }
     })
@@ -56,7 +53,6 @@ function closeall(name)
         }
       },
       error: function (xhr, status, errorThrown) {
-          //Here the status code can be retrieved like;
           xhr.status;
           if (xhr.status == 401) {
             $(document).simpledialog2({
@@ -72,11 +68,9 @@ function closeall(name)
                     "<label for='pass'>Password:</label><br>"+
                     "<input type='password' id='pass' name='pass'>"+
                   "</form>" +
-                  // NOTE: the use of rel="close" causes this button to close the dialog.
                   "<a rel='close' data-role='button' href='#' onclick='loginpromt(\x22closeall\x22)'>OK</a>"
                 });
           }
-          //The message added to Response object in Controller can be retrieved as following.
           xhr.responseText;
       }
     })
